@@ -1,0 +1,44 @@
+PLUTO ATTACKS
+Story time
+You are a captain of the Space Force and are bored out of your mind while speaking to a solider:
+
+Captain: “Man why did I become a captain for the space force, we haven’t fought ANY aliens yet! Should’ve joined the damn Nav….
+
+*SUDDEN EXPLOSION”
+
+*GROUND SHAKES*
+
+*YOU HEAR WHAT SOUNDS LIKE THE VOICE OF GOD”
+
+ATTENTION ALL HUMANS, SEVERAL YEARS AGO YOU DECLASSIFIED OUR BEAUTIFUL HOME AS A PLANET! WE PLUTONIANS TOOK THIS TO HEART AND HAVE BEEN PLANNING AN ACT OF WAR OF VERY LONG! LET’S SEE IF EARTH IS STILL CLASSIFIED AS A PLANET AFTER WE ARE DONE WITH IT!
+
+Captain:”Well shit, here we gooo!”
+
+Your goal as the captain of the space force is to defend Earth from the plutonian invaders. You will have to fight through their 5 enemy ships to get to the big boss ship and defeat it. You have bullets, missiles and an engineer on board who can help repair your ship.
+
+You will battle each ship one at a time, and progress to the next one as you defeat them. If you are destroyed all hope for the planet is lost and the plutonians will be our new alien overlords.
+
+MVP
+Render a start screen 
+Display instructions in the message display area 
+Add in my own assets to the game 
+Use DOM manipulation to target the alien ships to remove them when they are destroyed and do the same for my ship if i am destroyed
+The ship should have three primary functions, fire, missile and repair 
+The repair will simply grab the hull points and add a number value to them that i will determine
+You can use the fire function at anytime, i will set an accuracy key value pair in the object that will determine how often you will hit them 
+The missile function can’t be used everytime and will cause more damage to enemy hull
+When the ship fires there should be a little flame that appear and disappears in front of the ship
+When you defeat all enemy ships you will face a boss that does more damage and has more health 
+If you win you will get a message that appears in the message display area that says you have the saved the earth and are not president of the earth
+
+
+Stretch Goals
+Have a random number of enemies of spawn 
+The enemies will have randomized stats
+Allow for power ups in between rounds 
+Be able to use canvas to create a bullet and missile effect that will collide with the alien ship
+Create difficulty mode
+
+
+
+
