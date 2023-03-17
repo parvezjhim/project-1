@@ -34,7 +34,10 @@ When you defeat all enemy ships you will face a boss that does more damage and h
 If you win you will get a message that appears in the message display area that says you have the saved the earth and are not president of the earth
 
 ## ROADBLOCKS
-
+i believe i may have some roadblocks when it comes to 
+displaying messages when an action is taken
+i'm not sure if i should create an array with several different messages to display for each action or just KISS and leave it to one
+rendering screen stuff is still a little confusing 
 
 ## Stretch Goals
 Have a random number of enemies of spawn 
