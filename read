@@ -1,4 +1,4 @@
-PLUTO ATTACKS
+## PLUTO ATTACKS
 
 wireframe: ![wireframe](/wireframe/Your%20ship.png)
 Story time
@@ -20,7 +20,7 @@ Your goal as the captain of the space force is to defend Earth from the plutonia
 
 You will battle each ship one at a time, and progress to the next one as you defeat them. If you are destroyed all hope for the planet is lost and the plutonians will be our new alien overlords.
 
-MVP
+## MVP
 Render a start screen 
 Display instructions in the message display area 
 Add in my own assets to the game 
@@ -33,15 +33,17 @@ When the ship fires there should be a little flame that appear and disappears in
 When you defeat all enemy ships you will face a boss that does more damage and has more health 
 If you win you will get a message that appears in the message display area that says you have the saved the earth and are not president of the earth
 
+## ROADBLOCKS
 
-Stretch Goals
+
+## Stretch Goals
 Have a random number of enemies of spawn 
 The enemies will have randomized stats
 Allow for power ups in between rounds 
 Be able to use canvas to create a bullet and missile effect that will collide with the alien ship
 Create difficulty mode
 
-super stretch goals 
+## super stretch goals 
 i would like to make this an auto battler game where you choose 3 ships to begin with 
 those ships will have different health and attack stats and have various effects as well 
     ex: upon destruction of ship activate self destruct feature which will cause 5 damage to all surrounding units 
