@@ -1,5 +1,7 @@
 const canvas = document.querySelector("canvas")
 const ctx = canvas.getContext("2d")
+canvas.setAttribute('height', getComputedStyle(canvas).height)
+canvas.setAttribute('width', getComputedStyle(canvas).width)
 const startScreen = document.getElementById("start-screen")
 const youWonScreen = document.getElementById("you-won-screen")
 const youLostScreen = document.getElementById("you-lost-screen")
@@ -8,6 +10,7 @@ const instructionsButton = document.querySelector("#play-again")
 let gameIsOver = false;
 canvas.width = innerWidth
 canvas.height = innerHeight
+
 
 const openingCrawl = [
     '17 years ago, in a galaxy real, real close...',
@@ -42,15 +45,73 @@ const openingCrawl = [
     
  }
 
- class Hero {
-    constructor(){
-        this.position = {
-            x: 200,
-            y: 200,
-        }
-        this.speed = 10
-        this.image = url()
-        this.width = 100
-        this.height = 100
+
+function handleKeyPressEvent(e){
+    const speed = 5
+    switch(e.key){
+        case "w":
+            hero.y -= speed
+            break;
+        case 's':
+            hero.y += speed
+            break;
+        case 'a':
+            hero.x -= speed
+            break;
+        case 'd':
+            hero.x += speed
+            break;
+        case " ":
+        console.log("fire")
+        break;
+    }
+}
+
+ class Character {
+    constructor(x, y, width, height, color, speed){
+      this.x = x
+      this.y = y
+      this.width = width
+      this.height= height
+      this.color = color
+      this.alive = true
+      this.speed = speed
+      
+      
     }  
+    render(){
+        ctx.fillStyle = 'red'
+        canvas.fillRect(this.position.x, this.position.y, this.width, this.height)
+    }
  }
+
+ document.addEventListener("keydown", handleKeyPressEvent)
+
+
+ class Projectiles {
+    constructor(position, speed){
+        this.position = position
+        this.speed = speed
+        this.radius = 3
+    }
+    render(){
+        ctx.beginPath()
+        ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2)
+        ctx.fillStyle = 'red'
+        ctx.fill()
+        ctx.closePath()
+    }
+    update(){
+        this.render()
+        this.position.x += this.speed.x
+        this.position.y += this.speed.y
+    }
+ }
+ const hero = new Character (200, 200, 100, 100, "red", 5)
+ const alien1 = new Character ()
+ const alien2 = new Character ()
+ const alien3 = new Character ()
+ const alien4 = new Character ()
+ const alien5 = new Character ()
+ const boss = new Character ()
+
