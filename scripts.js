@@ -1,11 +1,56 @@
 const canvas = document.querySelector("canvas")
-const context = canvas.getContext("2d")
+const ctx = canvas.getContext("2d")
 const startScreen = document.getElementById("start-screen")
 const youWonScreen = document.getElementById("you-won-screen")
 const youLostScreen = document.getElementById("you-lost-screen")
 const playAgainButton = document.querySelector("#play-again")
 const instructionsButton = document.querySelector("#play-again")
-
-
+let gameIsOver = false;
 canvas.width = innerWidth
+canvas.height = innerHeight
 
+const openingCrawl = [
+    '17 years ago, in a galaxy real, real close...',
+    'Planet Earth has declassified Pluto as a planet...',
+    'Unbeknownst to Earth, this made the Plutonians furious',
+    'Hero: Why did I become a captain for the space force',
+    'Should have joined the damn Nav...',
+    'SUDDEN EXPLOSION',
+    'GROUND SHAKES',
+    'YOU HEAR WHAT SOUNDS LIKE THE VOICE OF GOD',
+    'ATTENTION ALL HUMANS, SEVERAL YEARS AGO YOU DECLASSIFIED OUR HOME',
+    'AS A PLANET, WE PLUTONIANS ARE HERE FOR OUR REVENGE!',
+    'LET/S SEE IF EARTH IS STILL CONSIDERED A PLANET AFTER WE ARE DONE WITH IT!',
+    'Your mission should you choose to accept it is',
+    'As the Captain of the Space Force it is your job to defend the Earth',
+    'You will be piloting the U.S.S Razor Crest which comes with a laser firing system ',
+    'You will need to defeat all enemy ships before you face the big boss',
+    'Dodge their fire, and destroy their ships or all hope is lost',
+    'Godspeed, Captain',
+ ];
+
+ const openingCrawlSpeed = 2
+ let openingCrawlY = canvas.height
+
+ function renderOpeningCrawl(){
+    ctx.fillStyle ='#000';
+    ctx.fillRect(0, 0, cancas.width, canvas.height);
+    ctx.font = '24px Arial';
+    ctx.fillStyle = "#fff";
+    ctx.textAlign = 'center';
+    let y = openingCrawlY
+    
+ }
+
+ class Hero {
+    constructor(){
+        this.position = {
+            x: 200,
+            y: 200,
+        }
+        this.speed = 10
+        this.image = url()
+        this.width = 100
+        this.height = 100
+    }  
+ }
