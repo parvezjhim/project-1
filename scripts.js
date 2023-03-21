@@ -168,6 +168,12 @@ const openingCrawl = [
   
   function handleCollisions() {
     bullets.forEach((bullet, bulletIndex) => {
-        for (let i = 0; i < enemyShips.length; i++)
-    }
-}
+        for (let i = 0; i < enemyShips.length; i++){
+            const enemy = enemyShips[i]
+            if(heroShip.x + heroShip.y >= enemy.x && heroShip.x <= enemy.x + enemy.width && heroShip.y <= enemy.y + enemy.height && heroShip.y + heroShip.height >= enemy.y){
+                gameIsOver = true;
+                youLostScreen.style.display = "block";
+                break;
+            }
+        }
+    })}
