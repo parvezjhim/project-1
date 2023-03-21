@@ -213,5 +213,15 @@ const openingCrawl = [
     ctx.fillStyle = "white";
     ctx.fillRect(heroShip.x, heroShip.y, heroShip.width, heroShip.height);
   }
+
+  function drawEnemyShips(){
+    ctx.fillStyle = "purple";
+    for (let i =0; i < enemyShips.length; i++){
+        const enemy = enemyShips [i];
+        ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height)
+    }
+  }
+
+  
   
   
