@@ -168,12 +168,46 @@ const openingCrawl = [
   
   function handleCollisions() {
     bullets.forEach((bullet, bulletIndex) => {
-        for (let i = 0; i < enemyShips.length; i++){
-            const enemy = enemyShips[i]
-            if(heroShip.x + heroShip.y >= enemy.x && heroShip.x <= enemy.x + enemy.width && heroShip.y <= enemy.y + enemy.height && heroShip.y + heroShip.height >= enemy.y){
-                gameIsOver = true;
-                youLostScreen.style.display = "block";
-                break;
-            }
+      for (let i = 0; i < enemyShips.length; i++) {
+        const enemy = enemyShips[i];
+        if (
+          heroShip.x + heroShip.width >= enemy.x &&
+          heroShip.x <= enemy.x + enemy.width &&
+          heroShip.y <= enemy.y + enemy.height &&
+          heroShip.y + heroShip.height >= enemy.y
+        ) {
+          gameIsOver = true;
+          youLostScreen.style.display = "block";
+          break;
         }
-    })}
+      }
+  
+      if (
+        bullet.x + bullet.width >= bossShip.x &&
+        bullet.x <= bossShip.x + bossShip.width &&
+        bullet.y <= bossShip.y + bossShip.height &&
+        bullet.y + bullet.height >= bossShip.y
+      ) {
+        bossShip.health--;
+        if (bossShip.health === 0) {
+          gameIsOver = true;
+          youWonScreen.style.display = "block";
+        }
+        bullets.splice(bulletIndex, 1);
+      }
+  
+      if (
+        bullet.x + bullet.width >= heroShip.x &&
+        bullet.x <= heroShip.x + heroShip.width &&
+        bullet.y <= heroShip.y + heroShip.height &&
+        bullet.y + bullet.height >= heroShip.y
+      ) {
+        gameIsOver = true;
+        youLostScreen.style.display = "block";
+        bullets.splice(bulletIndex, 1);
+      }
+    });
+  }
+
+  
+  
