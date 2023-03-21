@@ -209,5 +209,9 @@ const openingCrawl = [
     });
   }
 
+  function drawHeroShip(){
+    ctx.fillStyle = "white";
+    ctx.fillRect(heroShip.x, heroShip.y, heroShip.width, heroShip.height);
+  }
   
   
