@@ -212,16 +212,18 @@ const openingCrawl = [
   function drawHeroShip(){
     ctx.fillStyle = "white";
     ctx.fillRect(heroShip.x, heroShip.y, heroShip.width, heroShip.height);
-  }
+    // come back to add an image 
+}
 
   function drawEnemyShips(){
     ctx.fillStyle = "purple";
     for (let i =0; i < enemyShips.length; i++){
         const enemy = enemyShips [i];
         ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height)
+    // come back to add an image 
     }
   }
 
-  
+
   
   
