@@ -99,3 +99,26 @@ const openingCrawl = [
     }
  }
 
+function handleInput (event){
+    if(event.key === "a"){
+        heroShip.direction ="left"
+    } else if(event.key === "d"){
+        heroShip.direction = "right"
+    } else if (event.key === " "){
+        bullets.push({
+            x: heroShip.x + heroShip.width / 2,
+            y: heroShip.y,
+            width: 5,
+            height: 10,
+            speed: 10,
+        })
+    }
+}
+
+function handleRelease(event){
+    if(event.ley === "a" && heroShip.direction === "left"){
+        heroShip.direction = "null"
+    } else if(event.key === "d" && heroShip.direction === "right"){
+        heroShip.direction = "null"
+    }
+}
