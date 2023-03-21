@@ -1,15 +1,15 @@
 const canvas = document.querySelector("canvas")
 const ctx = canvas.getContext("2d")
-canvas.setAttribute('height', getComputedStyle(canvas).height)
-canvas.setAttribute('width', getComputedStyle(canvas).width)
+canvas.setAttribute("height", getComputedStyle(canvas).height)
+canvas.setAttribute("width", getComputedStyle(canvas.width))
+
 const startScreen = document.getElementById("start-screen")
 const youWonScreen = document.getElementById("you-won-screen")
-const youLostScreen = document.getElementById("you-lost-screen")
 const playAgainButton = document.querySelector("#play-again")
-const instructionsButton = document.querySelector("#play-again")
-let gameIsOver = false;
-canvas.width = innerWidth
-canvas.height = innerHeight
+const instructionsButton = document.querySelector("#instructions-button")
+const instructionsModal = document.querySelector("#instructions")
+const closeInstructionsButton = document.querySelector("#close-button")
+
 
 const openingCrawl = [
     '17 years ago, in a galaxy real, real close...',
@@ -36,7 +36,7 @@ const openingCrawl = [
 
  function renderOpeningCrawl(){
     ctx.fillStyle ='#000';
-    ctx.fillRect(0, 0, cancas.width, canvas.height);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.font = '24px Arial';
     ctx.fillStyle = "#fff";
     ctx.textAlign = 'center';
