@@ -9,21 +9,32 @@
    <title>Pluto Attacks</title>
 </head>
 <body>
-   <canvas id="canvas"></canvas>
+   <canvas id="canvas">
+    <div id="instructions" class="modal"> 
+
+        <div class="modal-content"> 
+        
+        <h2>Instructions</h2> 
+        
+        <p> You are the Captain of the U.S.S Razor Crest and your job is to destroy the enemy ships on the screen, after they are defeated you will face the big boss ship. Use W A S D keys to move your ship and use the space bar to fire. </p> 
+        
+        <button id="close-button">Close</button> </div> </div> <div id="start-screen"> 
+        
+        <h1>Press Space to Start</h1> </div> 
+        <div id="game-over-container"> 
+        <div id="you-won-screen" class="game-over-screen"> 
+        <h1>You Won!</h1> 
+        <button id="play-again">Play Again</button> 
+        </div> 
+        <div id="you-lost-screen" class="game-over-screen"> 
+        <h1>You Lost!</h1> 
+        <button id="play-again">Play Again</button> </div> </div>
+        
+        
+   </canvas>
 
 
-   <div id="start-screen">
-      <h1>Press Space to Start</h1>
-   </div>
-   <div id="instructions">
-       <h2>Instructions</h2>
-       <button id="instructions-button">How to play</button>
-   </div>
-  
-   <div id="game-over-screen" class="game-over-screen">
-      <h1></h1>
-      <button id="play-again" style="display:none">Play Again</button>
-   </div>
+
     
 </body>
 </html>
