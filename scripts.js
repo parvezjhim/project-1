@@ -224,6 +224,24 @@ const openingCrawl = [
     }
   }
 
+function drawBossShip(){
+    ctx.fillStyle = "orange";
+    ctx.fillRect(bossShip.x, bossShip.y, bossShip.width, bossShip.height);
+    // come back to add an image 
+}
 
+function drawBullets(){
+    ctx.fillStyle = "red";
+    for (let i = 0; i < bullets.length; i++){
+        const bullet = bullets [i]
+        ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height)
+    }
+}
+
+function drawScore (){
+    ctx.fillStyle = "white";
+    ctx.font = "24px Arial";
+    ctx.fillText(`Score ${score}, 20, 40`)
+}
   
   
