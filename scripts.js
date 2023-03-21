@@ -244,4 +244,23 @@ function drawScore (){
     ctx.fillText(`Score ${score}, 20, 40`)
 }
   
-  
+  function update(){
+    if(!gameIsOver){
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+    }
+  }
+
+  if(!gameStarted){
+    drawStartScreen()
+  } else {
+    moveHeroShip()
+    moveEnemyShips()
+    moveBossShip()
+    handleCollisions()
+    drawHeroShip()
+    drawEnemyShips()
+    drawBossShip()
+    drawBullets()
+    drawScore()
+  }
+
