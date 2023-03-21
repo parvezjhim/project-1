@@ -44,76 +44,12 @@ const openingCrawl = [
     
  }
 
+ const heroShip = {
+    x: canvas.width/2,
+    y: canvas.height - 50,
+    width: 50,
+    height: 50,
+    direction: null;
 
-function handleKeyPressEvent(e){
-    const speed = 5
-    switch(e.key){
-        case "w":
-            hero.y -= speed
-            break;
-        case 's':
-            hero.y += speed
-            break;
-        case 'a':
-            hero.x -= speed
-            break;
-        case 'd':
-            hero.x += speed
-            break;
-        case " ":
-        console.log("fire")
-        break;
-    }
-}
-
- class Character {
-    constructor(x, y, width, height, color, speed){
-      this.x = x
-      this.y = y
-      this.width = width
-      this.height= height
-      this.color = color
-      this.alive = true
-      this.speed = speed
-      
-    }  
-    render(){
-        ctx.fillStyle = 'red'
-        ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
-        
-
-    }
  }
-
- document.addEventListener("keydown", handleKeyPressEvent)
-
-
- class Projectiles {
-    constructor(position, speed){
-        this.position = position
-        this.speed = speed
-        this.radius = 3
-    }
-    render(){
-        ctx.beginPath()
-        ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2)
-        ctx.fillStyle = 'red'
-        ctx.fill()
-        ctx.closePath()
-    }
-    update(){
-        this.render()
-        this.position.x += this.speed.x
-        this.position.y += this.speed.y
-    }
- }
-
- const projectiles = []
- const hero = new Character (200, 200, 100, 100, "red", 5)
- const alien1 = new Character ()
- const alien2 = new Character ()
- const alien3 = new Character ()
- const alien4 = new Character ()
- const alien5 = new Character ()
- const boss = new Character ()
 
