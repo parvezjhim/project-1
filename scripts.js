@@ -49,7 +49,21 @@ const openingCrawl = [
     y: canvas.height - 50,
     width: 50,
     height: 50,
-    direction: null;
-
+    direction: null,
  }
 
+ const enemyShipWidth = 50;
+ const enemyShipHeight = 50;
+ const enemyShipSpeed = 2;
+ const enemyShipHealth = 5;
+ const enemyShips = [];
+
+ const bossShip ={
+    x: canvas.width/ 2 - 100,
+    y: -200,
+    width: 200,
+    height: 200,
+    speed: 2,
+    direction: "down",
+    health: 20.
+ }
