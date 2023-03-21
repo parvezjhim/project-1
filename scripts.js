@@ -11,7 +11,6 @@ let gameIsOver = false;
 canvas.width = innerWidth
 canvas.height = innerHeight
 
-
 const openingCrawl = [
     '17 years ago, in a galaxy real, real close...',
     'Planet Earth has declassified Pluto as a planet...',
@@ -77,11 +76,12 @@ function handleKeyPressEvent(e){
       this.alive = true
       this.speed = speed
       
-      
     }  
     render(){
         ctx.fillStyle = 'red'
-        canvas.fillRect(this.position.x, this.position.y, this.width, this.height)
+        ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
+        
+
     }
  }
 
@@ -107,6 +107,8 @@ function handleKeyPressEvent(e){
         this.position.y += this.speed.y
     }
  }
+
+ const projectiles = []
  const hero = new Character (200, 200, 100, 100, "red", 5)
  const alien1 = new Character ()
  const alien2 = new Character ()
