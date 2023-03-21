@@ -76,75 +76,98 @@ const openingCrawl = [
  let score = 0
  let gameStarted = false
  
- function startGame (){
+ function startGame() {
     gameStarted = true;
     startScreen.style.display = "none";
     spawnEnemyShips();
-    
- }
-
- function spawnEnemyShips(){
-    const numCols = Math.floor(canvas.width/ enemyShipWidth)
-    const numRows = 4
-    for (let i = 0; i < numCols * numRows; i++){
-        const x = (i % numCols) * enemyShipWidth;
-        const y = Math.floor(i/ numCols) * enemyShipHeight;
-        enemyShips.push({
-            x,
-            y,
-            width: enemyShipWidth,
-            height: enemyShipHeight,
-            health: enemyShipHealth
-        })
+  }
+  
+  function spawnEnemyShips() {
+    const numCols = Math.floor(canvas.width / enemyShipWidth);
+    const numRows = 4;
+    for (let i = 0; i < numCols * numRows; i++) {
+      const x = (i % numCols) * enemyShipWidth;
+      const y = Math.floor(i / numCols) * enemyShipHeight;
+      enemyShips.push({
+        x,
+        y,
+        width: enemyShipWidth,
+        height: enemyShipHeight,
+        health: enemyShipHealth
+      });
     }
- }
-
-function handleInput (event){
-    if(event.key === "a"){
-        heroShip.direction ="left"
-    } else if(event.key === "d"){
-        heroShip.direction = "right"
-    } else if (event.key === " "){
-        bullets.push({
-            x: heroShip.x + heroShip.width / 2,
-            y: heroShip.y,
-            width: 5,
-            height: 10,
-            speed: 10,
-        })
+  }
+  
+  function handleInput(event) {
+    if (event.key === "a") {
+      heroShip.direction = "left";
+    } else if (event.key === "d") {
+      heroShip.direction = "right";
+    } else if (event.key === " ") {
+      bullets.push({
+        x: heroShip.x + heroShip.width / 2,
+        y: heroShip.y,
+        width: 5,
+        height: 10,
+        speed: 10
+      });
+    }
+  }
+  
+  function handleRelease(event) {
+    if (event.key === "a" && heroShip.direction === "left") {
+      heroShip.direction = null;
+    } else if (event.key === "d" && heroShip.direction === "right") {
+      heroShip.direction = null;
+    }
+  }
+  
+  function moveHeroShip() {
+    if (heroShip.direction === "left" && heroShip.x > 0) {
+      heroShip.x -= heroShip.speed;
+    } else if (heroShip.direction === "right" && heroShip.x + heroShip.width < canvas.width) {
+      heroShip.x += heroShip.speed;
+    }
+  }
+  
+  function moveEnemyShips() {
+    const numCols = Math.floor(canvas.width / enemyShipWidth);
+    const leftMostShip = enemyShips[0];
+    const rightMostShip = enemyShips[enemyShips.length - 1];
+    if (leftMostShip.x <= 0 && enemiesAreMovingDown === false) {
+      enemiesAreMovingDown = true;
+    } else if (rightMostShip.x + enemyShipWidth >= canvas.width && enemiesAreMovingDown === true) {
+      enemiesAreMovingDown = false;
+    }
+    for (let i = 0; i < enemyShips.length; i++) {
+      const enemy = enemyShips[i];
+      if (enemiesAreMovingDown) {
+        enemy.x += enemyShipSpeed;
+      }
+    }
+  }
+  
+  function moveBossShip() {
+    if (bossShip.direction === "down") {
+      bossShip.y += bossShip.speed;
+      if (bossShip.y >= 0) {
+        bossShip.direction = "left";
+      }
+    } else if (bossShip.direction === "left") {
+      bossShip.x -= bossShip.speed;
+      if (bossShip.x <= 0) {
+        bossShip.direction = "right";
+      }
+    } else if (bossShip.direction === "right") {
+      bossShip.x += bossShip.speed;
+      if (bossShip.x + bossShip.width >= canvas.width) {
+        bossShip.direction = "left";
+      }
+    }
+  }
+  
+  function handleCollisions() {
+    bullets.forEach((bullet, bulletIndex) => {
+        for (let i = 0; i < enemyShips.length; i++)
     }
 }
-
-function handleRelease(event){
-    if(event.ley === "a" && heroShip.direction === "left"){
-        heroShip.direction = "null"
-    } else if(event.key === "d" && heroShip.direction === "right"){
-        heroShip.direction = "null"
-    }
-}
-
-function moveHeroShip(){
-    if (heroShip.direction === "left" && heroShip.x > 0){
-        heroShip.x -= heroShip.speed
-    } else if (heroShip.x === "righht" && heroShip.x + heroShip.width < canvas.width){
-        heroShip.x += heroShip.speed
-    }
-}
-
-function moveEnemyShips(){
-    const numCols = Math.floor(canvas.width/ enemyShipWidth)
-    const leftMostShip = enemyShips [0]
-    const rightMostShip = enemyShips[enemyShips.length - 1]
-    if(leftMostShip.x <= 0 && enemiesAreMovingDown === false){
-        enemiesAreMovingDown = true
-    } else if(rightMostShip.x + enemyShipWidth >= canvas.width && enemiesAreMovingDown === true){
-        enemiesAreMovingDown = false
-    } for (let i = 0 < enemyShips.length; i++){
-        const enemy = enemyShips[i]
-        if(enemiesAreMovingDown){
-            enemy.x += enemyShipSpeed
-        }
-    }
-}
-
-function moveBoss
