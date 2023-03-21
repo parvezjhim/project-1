@@ -67,3 +67,35 @@ const openingCrawl = [
     direction: "down",
     health: 20.
  }
+
+ let bullets = []
+
+ let gameIsOver = false
+ let enemiesAreMovingDown = false
+ let frames = 0
+ let score = 0
+ let gameStarted = false
+ 
+ function startGame (){
+    gameStarted = true;
+    startScreen.style.display = "none";
+    spawnEnemyShips();
+    
+ }
+
+ function spawnEnemyShips(){
+    const numCols = Math.floor(canvas.width/ enemyShipWidth)
+    const numRows = 4
+    for (let i = 0; i < numCols * numRows; i++){
+        const x = (i % numCols) * enemyShipWidth;
+        const y = Math.floor(i/ numCols) * enemyShipHeight;
+        enemyShips.push({
+            x,
+            y,
+            width: enemyShipWidth,
+            height: enemyShipHeight,
+            health: enemyShipHealth
+        })
+    }
+ }
+
