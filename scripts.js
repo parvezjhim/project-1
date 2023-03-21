@@ -122,3 +122,11 @@ function handleRelease(event){
         heroShip.direction = "null"
     }
 }
+
+function moveHeroShip(){
+    if (heroShip.direction === "left" && heroShip.x > 0){
+        heroShip.x -= heroShip.speed
+    } else if (heroShip.x === "righht" && heroShip.x + heroShip.width < canvas.width){
+        heroShip.x += heroShip.speed
+    }
+}
