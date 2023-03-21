@@ -130,3 +130,21 @@ function moveHeroShip(){
         heroShip.x += heroShip.speed
     }
 }
+
+function moveEnemyShips(){
+    const numCols = Math.floor(canvas.width/ enemyShipWidth)
+    const leftMostShip = enemyShips [0]
+    const rightMostShip = enemyShips[enemyShips.length - 1]
+    if(leftMostShip.x <= 0 && enemiesAreMovingDown === false){
+        enemiesAreMovingDown = true
+    } else if(rightMostShip.x + enemyShipWidth >= canvas.width && enemiesAreMovingDown === true){
+        enemiesAreMovingDown = false
+    } for (let i = 0 < enemyShips.length; i++){
+        const enemy = enemyShips[i]
+        if(enemiesAreMovingDown){
+            enemy.x += enemyShipSpeed
+        }
+    }
+}
+
+function moveBoss
