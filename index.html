@@ -1,34 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="main.css" rel="stylesheet">
-      <title>Pluto Attacks</title>
-   </head>
-   <body>
-      <canvas id="canvas"></canvas>
-      <div id="instructions" class="modal"> 
-         <div class="modal-content"> 
-            <h2>Instructions</h2> 
-            <p>You are the Captain of the U.S.S Razor Crest and your job is to destroy the enemy ships on the screen. After they are defeated, you will face the big boss ship. Use the A and D keys to move your ship, and use the space bar to fire.</p> 
-            <button id="close-button">Close</button>
-         </div>
-      </div>
-      <div id="start-screen"> 
-         <h1>Press Space to Start</h1> 
-      </div>
-      <div id="game-over-container"> 
-         <div id="you-won-screen" class="game-over-screen"> 
-            <h1>You Won!</h1> 
-            <button id="play-again">Play Again</button> 
-         </div>
-         <div id="you-lost-screen" class="game-over-screen"> 
-            <h1>You Lost!</h1> 
-            <button id="play-again">Play Again</button> 
-         </div>
-      </div>
-      <script src="scripts.js"></script>
-   </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <script defer src="scripts.js"></script>
+    <title>Pluto Attacks</title>
+</head>
+<body>
+    <button id="instructions-button">Instructions</button>
+    <div id="instructions-modal" class="modal">
+    <div class ="modal-content">
+        <span class = "close">&times;</span>
+        <p>You are the Captain for the Space Force, your goal is to move your ship using A and D and fire at the enemy ships using the SpaceBar. You have to defeat all enemies on the screen to have the boss ship show up. If you defeat the boss ship the game will end.</p>
+    </div>
+</div>
+    <canvas id="canvas"></canvas>
+</body>
 </html>
+
