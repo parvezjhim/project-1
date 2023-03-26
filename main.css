@@ -1,5 +1,5 @@
 html { 
-    background: url('/images/space\ =-shit.jpeg') no-repeat center center fixed; 
+    background: url('/images/space\ background.jpeg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -45,4 +45,99 @@ html {
     margin: 0 auto;
     display: block;
     
+}
+
+#play_message{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#play_message h1{
+    width: 100%;
+    text-align: center;
+}
+
+
+ @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+#play_message {
+  width: 100%;
+  height: 100vh;
+  font: 700 1em "News Cycle", sans-serif;
+  letter-spacing: .15em;
+  color: #ff6;
+  background: #000;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+
+  margin: 0;
+}
+
+.starwars section {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+
+  z-index: 1;
+}
+
+
+.starwars .titles {
+  width: 14.65em;
+  margin: 0 0 0 -7.325em;
+  top: auto;
+  bottom: 0;
+  height: 50em;
+  font-size: 350%;
+  text-align: justify;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg);
+}
+.starwars .titles > div {
+  position: absolute;
+top: 60%;
+  -webkit-animation: titles 5s linear 0s;
+          animation: titles 5s linear 0s;
+              left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.starwars .titles > div > p {
+  margin: 1.35em 0 1.85em 0;
+  line-height: 1.35em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+
+@-webkit-keyframes titles {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 60%;
+    opacity: 1;
+  }
+}
+@keyframes titles {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 60%;
+    opacity: 1;
+  }
 }
