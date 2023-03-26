@@ -99,9 +99,9 @@ html {
 }
 .starwars .titles > div {
   position: absolute;
-top: 60%;
-  -webkit-animation: titles 5s linear 0s;
-          animation: titles 5s linear 0s;
+top: 100%;
+  -webkit-animation: titles 15s linear 0s;
+          animation: titles 15s linear 0s;
               left: 0;
     right: 0;
     margin: 0 auto;
@@ -120,11 +120,11 @@ top: 60%;
     top: 100%;
     opacity: 1;
   }
-  95% {
+  100% {
     opacity: 1;
   }
   100% {
-    top: 60%;
+    top: 0%;
     opacity: 1;
   }
 }
@@ -133,11 +133,11 @@ top: 60%;
     top: 100%;
     opacity: 1;
   }
-  95% {
+  100% {
     opacity: 1;
   }
   100% {
-    top: 60%;
+    top: 0%;
     opacity: 1;
   }
 }
