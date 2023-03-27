@@ -5,6 +5,8 @@ gameboard: ![wireframe](./wireframe/gamearea.png)
 you-won-message: ![winnerMessage](./wireframe/youwin.png)
 you-lost:![lost](./wireframe/youlostscreen.png)
 
+## Link to the game
+https://parvezjhim.github.io/project-1/
 
 ## Story time
 
